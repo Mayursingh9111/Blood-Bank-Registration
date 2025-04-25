@@ -10,7 +10,7 @@ const registrationSchema = new mongoose.Schema({
   medicalComplications: String,
   state: { type: String, required: true },
   city: { type: String, required: true },
-  pinCode: { type: String, required: true },
+  pin: { type: String, required: true },
   address: { type: String, required: true },
 });
 

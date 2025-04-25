@@ -74,14 +74,11 @@ function MainForm() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch(
-        "https://blood-bank-registration-back-be13x44wc-mayursingh9111s-projects.vercel.app/register",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
-      );
+      const res = await fetch("http://localhost:5000/register", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
       if (res.ok) navigate("/success");
       else throw new Error("Server error");
     } catch (e) {
@@ -131,7 +128,9 @@ export default function App() {
   return (
     <Router>
       <div className="min-h-screen bg-blue-100 flex items-center justify-center flex-col p-4">
-        <h1 className="text-center font-bold text-3xl mb-32">Blood Bank Registration</h1>
+        <h1 className="text-center font-bold text-3xl mb-32">
+          Blood Bank Registration
+        </h1>
         <Routes>
           <Route path="/" element={<MainForm />} />
           <Route path="/success" element={<SuccessPage />} />
