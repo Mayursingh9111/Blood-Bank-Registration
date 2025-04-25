@@ -23,14 +23,19 @@ mongoose
 // POST Route for Registration
 app.post("/register", async (req, res) => {
   try {
-    const newUser = new Registration(req.body); // ✅ fixed
+    const newUser = new Registration(req.body);
     await newUser.save();
-    res.status(200).json({ message: "✅ Registration successful" });
+    res.status(200).json({ message: "Registration successful" });
   } catch (error) {
-    console.error("🚨 Error while saving user:", error.message);
+    console.error("Error while saving user:", error); // Log the full error
+    if (error.name === "ValidationError") {
+      // If it's a validation error, return detailed validation messages
+      return res.status(400).json({ error: error.message });
+    }
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
 
 // Start Server
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
