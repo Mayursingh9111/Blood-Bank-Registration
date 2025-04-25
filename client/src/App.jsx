@@ -5,6 +5,7 @@ import {
   Routes,
   Route,
   useNavigate,
+  Link,
 } from "react-router-dom";
 import PersonalDetails from "./components/PersonalDetails";
 import BloodDetails from "./components/BloodDetails";
@@ -134,6 +135,7 @@ export default function App() {
         <h1 className="text-center font-bold text-3xl mb-32">
           Blood Bank Registration
         </h1>
+
         <Routes>
           <Route path="/" element={<MainForm />} />
           <Route path="/success" element={<SuccessPage />} />
