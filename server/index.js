@@ -1,10 +1,8 @@
-import dotenv from 'dotenv';
 const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const Registration = require("./models/Registration");
 
-dotenv.config();
 const app = express();
 const PORT = 5000;
 
@@ -12,10 +10,14 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-const mongoURI = process.env.mongoURI;
+// MongoDB Atlas Connection URI
+const mongoURI =
+  "mongodb+srv://mayursingh9112001:NGsAKcCEYhPD0dxK@cluster0.qou0sza.mongodb.net/";
+
 // Connect to MongoDB Atlas
 mongoose
-  .connect(mongoURI, {})
+  .connect(mongoURI, {
+  })
   .then(() => console.log("MongoDB Atlas connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
