@@ -74,11 +74,14 @@ function MainForm() {
 
   const handleSubmit = async () => {
     try {
-      const res = await fetch("http://localhost:5000/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://blood-bank-registration-back-be13x44wc-mayursingh9111s-projects.vercel.app/register",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
       if (res.ok) navigate("/success");
       else throw new Error("Server error");
     } catch (e) {
