@@ -42,7 +42,7 @@ const PersonalDetails = ({ formData, setFormData, nextStep }) => {
       </button>
       <Link
         to="/all"
-        className="mt-4 underline text-blue-600 hover:text-blue-800"
+        className="mt-4  text-blue-600 hover:text-blue-800 btn ml-10"
       >
         View All Registrations
       </Link>
