@@ -19,6 +19,7 @@ mongoose
 
 
 app.post("/register", async (req, res) => {
+  console.log("Incoming data:", req.body);
   try {
     const newUser = new Registration(req.body);
     await newUser.save();
@@ -31,6 +32,7 @@ app.post("/register", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+
 app.get("/register", async (req, res) => {
   try {
     const allRegistrations = await Registration.find();
