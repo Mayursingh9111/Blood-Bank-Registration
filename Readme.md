@@ -21,12 +21,9 @@ This is a backend project that handles user registration. Users can register by 
 - **MongoDB Atlas**: Cloud-hosted MongoDB database
 - **Mongoose**: MongoDB object modeling for Node.js
 - **dotenv**: For managing environment variables
+-**React js**: For FrontEnd
 
 
-## Setup Instructions
-
-### Prerequisites
-Make sure you have the following installed:
 - **Node.js**: [Download Node.js](https://nodejs.org/)
 - **MongoDB Atlas**: Create a free cluster on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 
