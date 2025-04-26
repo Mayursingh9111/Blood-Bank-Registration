@@ -1,5 +1,6 @@
 const ReviewSubmit = ({ formData, prevStep, handleSubmit }) => (
-  <div>
+
+  <>
     <pre className="mb-4">{JSON.stringify(formData, null, 2)}</pre>
     <div className="flex justify-between">
       <button onClick={prevStep} className="btn">
@@ -9,7 +10,8 @@ const ReviewSubmit = ({ formData, prevStep, handleSubmit }) => (
         Submit
       </button>
     </div>
-  </div>
+    </>
+
 );
 
 export default ReviewSubmit;

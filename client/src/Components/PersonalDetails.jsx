@@ -5,32 +5,32 @@ const PersonalDetails = ({ formData, setFormData, nextStep }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <div>
-      <h1>Personal Details:</h1>
+    <>
+      <h1 className="text-center">Personal Details</h1>
+      <label>Name:</label>
       <input
         name="name"
-        placeholder="Name"
         value={formData.name}
         onChange={handleChange}
         className="input"
       />
+      <label>Age:</label>
       <input
         name="age"
-        placeholder="Age"
         value={formData.age}
         onChange={handleChange}
         className="input"
       />
+      <label>Gender:</label>
       <input
         name="gender"
-        placeholder="Gender"
         value={formData.gender}
         onChange={handleChange}
         className="input"
       />
+      <label>Contact:</label>
       <input
         name="contact"
-        placeholder="Contact"
         value={formData.contact}
         onChange={handleChange}
         className="input"
@@ -38,7 +38,7 @@ const PersonalDetails = ({ formData, setFormData, nextStep }) => {
       <button onClick={nextStep} className="btn">
         Next
       </button>
-    </div>
+    </>
   );
 };
 

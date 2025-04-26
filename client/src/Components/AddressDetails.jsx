@@ -3,32 +3,32 @@ const AddressDetails = ({ formData, setFormData, nextStep, prevStep }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <div>
-      <h1>Address Details:</h1>
+    <>
+      <h1 className="text-center">Address Details:</h1>
+      <label>State:</label>
       <input
         name="state"
-        placeholder="State"
         value={formData.state}
         onChange={handleChange}
         className="input"
       />
+      <label>City:</label>
       <input
         name="city"
-        placeholder="City"
         value={formData.city}
         onChange={handleChange}
         className="input"
       />
+      <label>PinCode:</label>
       <input
         name="pin"
-        placeholder="PIN Code"
         value={formData.pin}
         onChange={handleChange}
         className="input"
       />
+      <label>Address:</label>
       <textarea
         name="address"
-        placeholder="Address"
         value={formData.address}
         onChange={handleChange}
         className="input"
@@ -41,7 +41,7 @@ const AddressDetails = ({ formData, setFormData, nextStep, prevStep }) => {
           Next
         </button>
       </div>
-    </div>
+    </>
   );
 };
 

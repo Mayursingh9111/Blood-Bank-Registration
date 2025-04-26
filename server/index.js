@@ -14,8 +14,8 @@ const mongoURI = process.env.mongoURI;
 
 mongoose
   .connect(mongoURI, {})
-  .then(() => console.log("✅ MongoDB Atlas connected"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+  .then(() => console.log("MongoDB Atlas connected"))
+  .catch((err) => console.error("MongoDB connection error:", err));
 
 
 app.post("/register", async (req, res) => {
@@ -24,9 +24,8 @@ app.post("/register", async (req, res) => {
     await newUser.save();
     res.status(200).json({ message: "Registration successful" });
   } catch (error) {
-    console.error("Error while saving user:", error); // Log the full error
+    console.error("Error while saving user:", error);
     if (error.name === "ValidationError") {
-      // If it's a validation error, return detailed validation messages
       return res.status(400).json({ error: error.message });
     }
     res.status(500).json({ error: "Internal Server Error" });
@@ -34,4 +33,4 @@ app.post("/register", async (req, res) => {
 });
 
 
-app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

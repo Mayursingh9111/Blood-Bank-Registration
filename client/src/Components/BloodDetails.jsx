@@ -3,25 +3,25 @@ const BloodDetails = ({ formData, setFormData, nextStep, prevStep }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
-    <div>
-      <h1>Blood Details:</h1>
+    <>
+      <h1 className="text-center">Blood Details:</h1>
+      <label>Blood Group:</label>
       <input
         name="bloodGroup"
-        placeholder="Blood Group"
         value={formData.bloodGroup}
         onChange={handleChange}
         className="input"
       />
+      <label>Last Donation Date:</label>
       <input
         name="lastDonation"
-        placeholder="Last Donation Date"
         value={formData.lastDonation}
         onChange={handleChange}
         className="input"
       />
+      <label>Any Complications?</label>
       <input
         name="complications"
-        placeholder="Any Complications?"
         value={formData.complications}
         onChange={handleChange}
         className="input"
@@ -34,7 +34,7 @@ const BloodDetails = ({ formData, setFormData, nextStep, prevStep }) => {
           Next
         </button>
       </div>
-    </div>
+    </>
   );
 };
 
