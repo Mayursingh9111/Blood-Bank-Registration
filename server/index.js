@@ -19,19 +19,16 @@ mongoose
 
 
 app.post("/register", async (req, res) => {
-  console.log("Incoming data:", req.body);
   try {
     const newUser = new Registration(req.body);
     await newUser.save();
     res.status(200).json({ message: "Registration successful" });
   } catch (error) {
     console.error("Error while saving user:", error);
-    if (error.name === "ValidationError") {
-      return res.status(400).json({ error: error.message });
-    }
-    res.status(500).json({ error: "Internal Server Error" });
+    res.status(400).json({ error: error.message });
   }
 });
+
 
 app.get("/register", async (req, res) => {
   try {
