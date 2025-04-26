@@ -7,10 +7,11 @@ import {
   useNavigate,
   Link,
 } from "react-router-dom";
-import PersonalDetails from "./components/PersonalDetails";
+import PersonalDetails from "./Components/PersonalDetails";
 import BloodDetails from "./components/BloodDetails";
 import AddressDetails from "./components/AddressDetails";
 import ReviewSubmit from "./components/ReviewSubmit";
+import AllRegistrations from "./Components/AllRegistrations";
 
 import SuccessPage from "./components/SuccessPage";
 
@@ -139,6 +140,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<MainForm />} />
           <Route path="/success" element={<SuccessPage />} />
+          <Route path="/all" element={<AllRegistrations />} />
         </Routes>
       </div>
     </Router>

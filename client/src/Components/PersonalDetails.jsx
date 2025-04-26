@@ -1,5 +1,7 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
+
 const PersonalDetails = ({ formData, setFormData, nextStep }) => {
   const handleChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,6 +40,12 @@ const PersonalDetails = ({ formData, setFormData, nextStep }) => {
       <button onClick={nextStep} className="btn">
         Next
       </button>
+      <Link
+        to="/all"
+        className="mt-4 underline text-blue-600 hover:text-blue-800"
+      >
+        View All Registrations
+      </Link>
     </>
   );
 };

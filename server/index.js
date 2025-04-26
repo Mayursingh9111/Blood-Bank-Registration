@@ -31,6 +31,15 @@ app.post("/register", async (req, res) => {
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
+app.get("/register", async (req, res) => {
+  try {
+    const allRegistrations = await Registration.find();
+    res.status(200).json(allRegistrations);
+  } catch (error) {
+    console.error("Error fetching registrations:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+});
 
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
